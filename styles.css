@@ -1,0 +1,148 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background: #f3f4f6; /* light gray */
+}
+
+h1 {
+  color: #1e3a8a; /* deep blue */
+  margin-bottom: 2rem;
+}
+
+/* Part 1: Button hover */
+.fancy-btn {
+  padding: 12px 24px;
+  background: #2563eb; /* bright blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+.fancy-btn:hover {
+  transform: scale(1.15);
+  background: #1e40af; /* darker blue */
+}
+
+/* Part 2 & 3: Box animation */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: #f87171; /* soft red */
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out, background 0.3s;
+}
+.box.animate {
+  transform: rotate(360deg) scale(1.2);
+  background: #dc2626; /* darker red when animated */
+}
+
+/* Animate button */
+#animateBtn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #10b981; /* green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#animateBtn:hover {
+  background: #065f46; /* darker green */
+}
+
+/* Card flip */
+.card {
+  width: 180px;
+  height: 220px;
+  margin: 30px auto;
+  perspective: 1000px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+}
+.card-front {
+  background: #3b82f6; /* bright blue */
+}
+.card-back {
+  background: #9333ea; /* purple */
+  transform: rotateY(180deg);
+}
+
+/* Modal styles */
+#openModal {
+  padding: 10px 20px;
+  background: #f59e0b; /* amber */
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#openModal:hover {
+  background: #b45309; /* darker amber */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  animation: fadeIn 0.5s;
+  text-align: center;
+}
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #111827; /* near-black */
+}
+#closeModal {
+  padding: 8px 16px;
+  background: #ef4444; /* red */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#closeModal:hover {
+  background: #991b1b; /* darker red */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
